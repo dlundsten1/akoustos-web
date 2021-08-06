@@ -1,36 +1,38 @@
 import React from "react";
 import Layout from "../components/Layout";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-const template = ({ pageContext }) => {
-  console.log(pageContext);
-  const document = {
-    nodeType: "document",
-    data: {},
-    content: [
-      {
-        nodeType: "paragraph",
-        data: {},
-        content: [
-          {
-            nodeType: "text",
-            value: "Hello world!",
-            marks: [],
-            data: {},
-          },
-        ],
-      },
-    ],
-  };
-  console.log(JSON.parse(pageContext))
-  console.log(documentToReactComponents(document));
+const Bold = ({ children }) => <span className="bold">{children}</span>;
+const Text = ({ children }) => <p className="align-center">{children}</p>;
 
+const template = ({ pageContext }) => {
+  console.log(JSON.parse(pageContext.content.raw));
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        
+        // let { description, title, file } = node.data.target.fields
+        console.log(node.data)
+        return (
+          <>
+            <h2>Embedded Asset</h2>
+            <pre>
+              <code>{JSON.stringify(node, null, 2)}</code>
+            </pre>
+          </>
+        );
+      },
+    },
+  };
   return (
     <Layout>
       <h1>{pageContext.title}</h1>
-      {pageContext.content.raw}
-      {documentToReactComponents(document)}
-      {/* {documentToReactComponents(pageContext.content.raw)} */}
+      {documentToReactComponents(JSON.parse(pageContext.content.raw), options)}
     </Layout>
   );
 };

@@ -6,8 +6,6 @@ var classNames = require('classnames/bind');
 var cx = classNames.bind(styles); 
 
 const layout = ({ children }) => {
-
-  console.log(window.location.pathname === '/');
   return (
     <>
       <Header/>
@@ -22,22 +20,3 @@ const layout = ({ children }) => {
 };
 
 export default layout;
-
-// import React from 'react'
-// import { Container } from 'reactstrap'
-// import { useLocation } from 'react-router-dom'
-// import { isEqual } from 'lodash'
-// import styles from './Layout.module.css'
-
-// function Layout({ children }) {
-//   const { pathname } = useLocation()
-//   return (
-//     <>
-//       <Container className={!pathname.includes('login') && !isEqual(pathname, '/') ? styles.container : styles.login}>
-//         {children}
-//       </Container>
-//     </>
-//   )
-// }
-
-// export default Layout
