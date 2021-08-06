@@ -10,7 +10,7 @@ const layout = ({ children }) => {
     <>
       <Header/>
       <div className={cx('root',{
-        'black': window.location.pathname === '/'
+        'black': window && window.location.pathname === '/'
       })}>
         <div className={styles.container}>{children}</div>
         {/* <Footer /> */}

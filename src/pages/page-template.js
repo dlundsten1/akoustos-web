@@ -7,7 +7,6 @@ const Bold = ({ children }) => <span className="bold">{children}</span>;
 const Text = ({ children }) => <p className="align-center">{children}</p>;
 
 const template = ({ pageContext }) => {
-  console.log(JSON.parse(pageContext.content.raw));
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
@@ -17,7 +16,6 @@ const template = ({ pageContext }) => {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         
         // let { description, title, file } = node.data.target.fields
-        console.log(node.data)
         return (
           <>
             <h2>Embedded Asset</h2>
