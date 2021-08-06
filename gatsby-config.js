@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://akoustos.se/",
     title: "akoustus.web",
   },
   plugins: [
@@ -8,7 +8,7 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: {
         accessToken: "OvGzoVW3IB9VV1hslLafLRfZvKzxjS7EXU_lIerBwIA",
-        spaceId: "",
+        spaceId: "sph5fmntez9o",
       },
     },
     "gatsby-plugin-image",

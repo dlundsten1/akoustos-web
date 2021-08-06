@@ -1,0 +1,131 @@
+#___gatsby {
+    
+}
+
+html {
+    background-color: #F4F7F6;
+}
+:root {
+    --color-primary-rgb: 194, 132, 122;
+    --color-primary: rgb(var(--color-primary-rgb), 1);
+    --color-primary-10: rgb(var(--color-primary-rgb), 0.1);
+    --color-primary-20: rgb(var(--color-primary-rgb), 0.2);
+    --color-primary-30: rgb(var(--color-primary-rgb), 0.3);
+    --color-primary-40: rgb(var(--color-primary-rgb), 0.4);
+    --color-primary-50: rgb(var(--color-primary-rgb), 0.5);
+    --color-primary-60: rgb(var(--color-primary-rgb), 0.6);
+    --color-primary-70: rgb(var(--color-primary-rgb), 0.7);
+    --color-primary-80: rgb(var(--color-primary-rgb), 0.8);
+    --color-primary-90: rgb(var(--color-primary-rgb), 0.9);
+    --color-secondary-rgb: 194, 132, 122;
+    --color-secondary: rgb(var(--color-secondary-rgb), 1);
+    --color-secondary-10: rgb(var(--color-secondary-rgb), 0.1);
+    --color-secondary-20: rgb(var(--color-secondary-rgb), 0.2);
+    --color-secondary-30: rgb(var(--color-secondary-rgb), 0.3);
+    --color-secondary-40: rgb(var(--color-secondary-rgb), 0.4);
+    --color-secondary-50: rgb(var(--color-secondary-rgb), 0.5);
+    --color-secondary-60: rgb(var(--color-secondary-rgb), 0.6);
+    --color-secondary-70: rgb(var(--color-secondary-rgb), 0.7);
+    --color-secondary-80: rgb(var(--color-secondary-rgb), 0.8);
+    --color-secondary-90: rgb(var(--color-secondary-rgb), 0.9);
+    --transition: 0.25s ease-in-out;
+    --layout-max-width: 1040px;
+    --layout-gutter: 20px;
+    --font-family-body: Georgia;
+    --font-family-pro:  Arial, sans-serif;
+    --font-family-light: Arial, sans-serif;
+    --font-family-medium: Arial, sans-serif;
+    --font-weight-thin: 100;
+    --font-weight-normal: 400;
+    --font-weight-bold: 500;
+    --root-font-size: 16px;
+    --text-large: 1.25rem;
+    --text-medium: 1rem;
+    --text-small: 0.875rem;
+    --text-smaller: 0.75rem;
+    /* z indexess  */
+    --z-backdrop: 30;
+    --z-popover: 20;
+    --z-splashcontent: 10;
+    --z-fullview: 6;
+    --z-serviceNotes: 5;
+    --z-siteheader: 5;
+    --z-backdrop-low: 3;
+    --z-tsball: 2;
+    --z-tsballgfx: 1;
+    /* header things */
+    --header-height: 80px;
+    /* Primary colors */
+    --color-red: #cf1111;
+    --color-light-red: #eb1e2c;
+    --color-dark-red: #940710;
+    --color-white: #fff;
+    --color-white70: rgba(255, 255, 255, 0.7);
+    --color-white50: rgba(255, 255, 255, 0.5);
+    --color-white12: rgba(255, 255, 255, 0.12);
+    --color-black87: rgba(0, 0, 0, 0.87);
+    --color-black80: rgba(0, 0, 0, 0.8);
+    --color-black60: rgba(0, 0, 0, 0.6);
+    --color-black38: rgba(0, 0, 0, 0.38);
+    --color-black12: rgba(0, 0, 0, 0.12);
+    --color-black6: rgba(0, 0, 0, 0.06);
+    /* Greyscale */
+    --color-silver: #f4f6f6;
+    --color-lighter-grey: #f0f0f0;
+    --color-light-grey: #e0e0e0;
+    --color-background-grey: #F1F1F2;
+    --color-medium-grey: #a9a9a959;
+    --color-grey: var(--color-medium-grey);
+    --color-dark-grey: #666;
+    --color-darker-grey: #333;
+    --color-black: #212121;
+    /* Secondary colors */
+    --color-turquoise: #00a0ba;
+    --color-light-turquoise: #bfe7ee;
+    --color-dark-turquoise: #005664;
+    --color-green: #ACDD01;
+    --color-light-green: #d6efc7;
+    --color-dark-green: #225504;
+    --color-blue: #1f5aa7;
+    --color-light-blue: #c7d6e9;
+    --color-dark-blue: #184888;
+    --color-purple: #af3d8f;
+    --color-light-purple: #eacee3;
+    --color-dark-purple: #87206c;
+    --color-orange: #c24017;
+    /* Functional colors */
+    --color-dark-orange: #d43504;
+    --color-light-orange: #f39717;
+    --color-brown-orange: #b43913;
+    --color-brownish-orange: #d94f24;
+    /* Specific use cases */
+    --color-text: var(--color-black);
+    --color-error: var(--color-red);
+    /* Status colors */
+    --status-approved: var(--color-green);
+    --status-available: var(--color-turquoise);
+    --status-reject: var(--color-dark-orange);
+    --status-actionrequired: var(--color-light-orange);
+    --status-noaction: var(--color-medium-grey);
+    --status-terminated: var(--color-brownish-orange);
+    --color-loading-grey: #9b9b9b33;
+}
+
+a {
+    color:var(--color-primary)
+}
+a:hover {
+    color:unset;
+}
+
+body {
+    /* background-color: #f0f2f552; */
+}
+
+body {
+    font-family: var(--font-family-pro);
+}
+
+svg {
+  pointer-events: none;
+}

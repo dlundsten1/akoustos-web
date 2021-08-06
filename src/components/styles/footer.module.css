@@ -1,0 +1,9 @@
+
+.footer {
+    display:flex;
+    justify-content: space-between;
+    max-width: var(--layout-max-width);
+    margin:auto;
+    padding-top:2rem;
+    padding-bottom:2rem;
+}
