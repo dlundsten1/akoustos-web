@@ -14,7 +14,6 @@ const template = ({ pageContext }) => {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        
         // let { description, title, file } = node.data.target.fields
         return (
           <>
@@ -27,10 +26,15 @@ const template = ({ pageContext }) => {
       },
     },
   };
+
   return (
     <Layout>
       <h1>{pageContext.title}</h1>
-      {documentToReactComponents(JSON.parse(pageContext.content.raw), options)}
+      {pageContext.content?.raw &&
+        documentToReactComponents(
+          JSON.parse(pageContext?.content?.raw),
+          options
+        )}
     </Layout>
   );
 };
