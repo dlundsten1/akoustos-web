@@ -10,7 +10,6 @@ module.exports = {
         forceFullSync: true,
         accessToken: "OvGzoVW3IB9VV1hslLafLRfZvKzxjS7EXU_lIerBwIA",
         spaceId: "sph5fmntez9o",
-        downloadLocal: true,
       },
     },
     "gatsby-plugin-image",
