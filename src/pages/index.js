@@ -5,7 +5,7 @@ import * as styles from "./home.module.css";
 
 const home = () => {
   return (
-    <Layout>
+    <Layout onRoot={true}>
       <div className={styles.wrapper}>
         <div style={{ margin: "auto" }}>
           <h1 className={styles.header}>

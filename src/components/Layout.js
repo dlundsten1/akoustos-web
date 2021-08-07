@@ -5,14 +5,17 @@ import { Header, Footer } from ".";
 var classNames = require("classnames/bind");
 var cx = classNames.bind(styles);
 
-const layout = ({ children }) => {
+const layout = (props) => {
+  const { children, onRoot } = props;
   return (
     <>
       <Header />
-      {/* <div className={cx('root',{
-        'black': window && window.location.pathname === '/'
-      })}> */}
-      <div className={cx("root")}>
+      <div
+        className={cx("root", {
+          black: onRoot,
+        })}
+      >
+        {/* <div className={cx("root")}> */}
         <div className={styles.container}>{children}</div>
         {/* <Footer /> */}
       </div>
