@@ -13,17 +13,21 @@
 .onRoot {
   border-bottom: none;
 }
+
+.title{
+  margin-top:-2px;
+  font-size: 1.3rem !important;
+}
 .header {
   display: flex;
   justify-content: space-between;
   max-width: var(--layout-max-width);
   margin: auto;
-  padding-left:1rem;
-  padding-right:1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-
 .header a {
   font-size: 0.95rem;
   color: white;
@@ -31,8 +35,9 @@
   text-decoration: none;
 }
 .header a:hover {
-  color: #4452fb;
+  color: var(--color-primary);
 }
+
 
 @media screen and (max-width: 600px) {
   .menu {

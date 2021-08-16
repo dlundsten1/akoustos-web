@@ -24,7 +24,7 @@ const Header = ({ onRoot }) => {
       })}
     >
       <div className={cx("header", {})}>
-        <Link to="/">AKOUSTOS</Link>
+        <Link className={styles.title} to="/">AKOUSTOS</Link>
         <div className={styles.menu}>
           <Link to="/">Home</Link>
           <Link to="/news">News</Link>
