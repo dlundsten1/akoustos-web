@@ -3,7 +3,10 @@
 }
 
 html {
-    background-color: #F4F7F6;
+    background-color: #F1F1F2;
+}
+body {
+    margin:0;
 }
 :root {
     --color-primary-rgb: 194, 132, 122;
@@ -78,7 +81,7 @@ html {
     --color-grey: var(--color-medium-grey);
     --color-dark-grey: #666;
     --color-darker-grey: #333;
-    --color-black: #212121;
+    --color-black: #404040;
     /* Secondary colors */
     --color-turquoise: #00a0ba;
     --color-light-turquoise: #bfe7ee;

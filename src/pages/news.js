@@ -5,7 +5,7 @@ import * as styles from "./news.module.css";
 
 const home = () => {
   return (
-    <Layout>
+    <Layout onRoot={false}>
       <h1>News</h1>
       <div className={styles.news}>
         <div className={styles.article}>

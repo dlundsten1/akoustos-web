@@ -28,7 +28,7 @@ const template = ({ pageContext }) => {
   };
 
   return (
-    <Layout>
+    <Layout onRoot={false}>
       <h1>{pageContext.title}</h1>
       {pageContext.content?.raw &&
         documentToReactComponents(

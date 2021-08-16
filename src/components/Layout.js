@@ -9,7 +9,7 @@ const layout = (props) => {
   const { children, onRoot } = props;
   return (
     <>
-      <Header />
+      <Header onRoot={onRoot} />
       <div
         className={cx("root", {
           black: onRoot,
@@ -17,8 +17,8 @@ const layout = (props) => {
       >
         {/* <div className={cx("root")}> */}
         <div className={styles.container}>{children}</div>
-        {/* <Footer /> */}
       </div>
+      <Footer onRoot={onRoot} />
     </>
   );
 };

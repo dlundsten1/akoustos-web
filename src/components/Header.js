@@ -1,8 +1,10 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import * as styles from "./styles/header.module.css";
+var classNames = require("classnames/bind");
+var cx = classNames.bind(styles);
 
-const Header = () => {
+const Header = ({ onRoot }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulPage {
@@ -16,8 +18,12 @@ const Header = () => {
     }
   `);
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>
+    <div
+      className={cx("wrapper", {
+        onRoot: onRoot,
+      })}
+    >
+      <div className={cx("header", {})}>
         <Link to="/">AKOUSTOS</Link>
         <div className={styles.menu}>
           <Link to="/">Home</Link>
