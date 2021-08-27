@@ -6,8 +6,6 @@
 }
 
 .article {
-  
-  width:47%;
   margin-bottom:3rem;
   
 }
@@ -21,6 +19,7 @@
 
 
 .image {
+  margin-bottom: -4px;
   width: 100%;
 }
 
@@ -51,4 +50,13 @@
 
 .footer .name {
   font-weight: bold;
+}
+
+.articleLink:hover {
+  text-decoration: none;
+}
+.articleLink {
+  width:47%;
+  color:black;
+  text-decoration: none;
 }

@@ -16,6 +16,18 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             content {
               raw
+              references {
+                ... on ContentfulAsset {
+                  contentful_id
+                  __typename
+                  fixed {
+                    width
+                    height
+                    src
+                    srcSet
+                  }
+                }
+              }
             }
           }
         }

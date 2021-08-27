@@ -1,12 +1,13 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import React from "react";
 import Layout from "../components/Layout";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const Bold = ({ children }) => <span className="bold">{children}</span>;
 const Text = ({ children }) => <p className="align-center">{children}</p>;
 
 const template = ({ pageContext }) => {
+  
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
@@ -14,19 +15,15 @@ const template = ({ pageContext }) => {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        // let { description, title, file } = node.data.target.fields
+        const image = pageContext.content.references.find(reference => reference.contentful_id === node.data.target.sys.id)
+    
         return (
-          <>
-            <h2>Embedded Asset</h2>
-            <pre>
-              <code>{JSON.stringify(node, null, 2)}</code>
-            </pre>
-          </>
+            <img height={image.fixed.height} width={image.fixed.width} src={image.fixed.src}/>
+           
         );
       },
     },
   };
-
   return (
     <Layout onRoot={false}>
       <h1>{pageContext.title}</h1>

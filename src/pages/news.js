@@ -2,28 +2,30 @@ import React from "react";
 import Layout from "../components/Layout";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import * as styles from "./news.module.css";
+import dateToTimeFromNow from "../utils/dateToTimeFromNow";
 // import { StaticImage } from "gatsby-image"
 
 const Article = ({ node }) => {
   return (
-    <div className={styles.article}>
-      <div></div>
-      <img
-        className={styles.image}
-        alt="image of the Akoustos screw"
-        src={node.image.file.url}
-      />
-      <div className={styles.details}>
-        <h3>{node.title}</h3>
-        <p>{node.content.raw}</p>
+    <Link className={styles.articleLink} to={`/article/${node.id}`}>
+      <div className={styles.article}>
+        <img
+          className={styles.image}
+          alt="image of the Akoustos screw"
+          src={node.image.file.url}
+        />
+        <div className={styles.details}>
+          <h3>{node.head}</h3>
+          <p>{node.subhead}</p>
 
-        <div className={styles.divider}></div>
-        <div className={styles.footer}>
-          {node.createdAt} • By{" "}
-          <span className={styles.name}> {node.author} </span>
+          <div className={styles.divider}></div>
+          <div className={styles.footer}>
+            {dateToTimeFromNow(new Date(node.createdAt))} • By{" "}
+            <span className={styles.name}> {node.author} </span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 const News = () => {
@@ -44,8 +46,9 @@ const News = () => {
                 url
               }
             }
-            title
-            content {
+            head
+            subhead
+            body {
               raw
             }
           }
@@ -55,7 +58,6 @@ const News = () => {
   `);
 
   const articles = data.allContentfulArticle.edges;
-  console.log(articles);
   return (
     <Layout onRoot={false}>
       <h1>News</h1>
