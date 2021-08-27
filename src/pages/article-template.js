@@ -7,7 +7,6 @@ const Bold = ({ children }) => <span className="bold">{children}</span>;
 const Text = ({ children }) => <p className="align-center">{children}</p>;
 
 const template = ({ pageContext }) => {
-  
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
@@ -15,7 +14,7 @@ const template = ({ pageContext }) => {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const image = pageContext.content.references.find(reference => reference.contentful_id === node.data.target.sys.id)
+        const image = pageContext.body.references.find(reference => reference.contentful_id === node.data.target.sys.id)
     
         return (
             <img height={image.fixed.height} width={image.fixed.width} src={image.fixed.src}/>
@@ -26,10 +25,10 @@ const template = ({ pageContext }) => {
   };
   return (
     <Layout onRoot={false}>
-      <h1 style={{textTransform:'uppercase'}}>{pageContext.title}</h1>
-      {pageContext.content?.raw &&
+      <h1>{pageContext.head}</h1>
+      {pageContext.body?.raw &&
         documentToReactComponents(
-          JSON.parse(pageContext?.content?.raw),
+          JSON.parse(pageContext?.body?.raw),
           options
         )}
     </Layout>

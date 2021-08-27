@@ -60,7 +60,7 @@ const News = () => {
   const articles = data.allContentfulArticle.edges;
   return (
     <Layout onRoot={false}>
-      <h1>News</h1>
+      <h1 style={{textTransform:'uppercase'}}>News</h1>
       <div className={styles.news}>
         {articles.map((article) => {
           return <Article node={article.node} />;
