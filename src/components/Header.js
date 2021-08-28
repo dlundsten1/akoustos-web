@@ -11,7 +11,7 @@ const Header = ({ onRoot }) => {
         edges {
           node {
             slug
-            title
+            linkName
           }
         }
       }
@@ -29,7 +29,7 @@ const Header = ({ onRoot }) => {
           <Link to="/">Home</Link>
           <Link to="/news">News</Link>
           {data.allContentfulPage.edges.map((edge) => (
-            <Link to={`/${edge.node.slug}`}>{edge.node.title}</Link>
+            <Link to={`/${edge.node.slug}`}>{edge.node.linkName}</Link>
           ))}
         </div>
       </div>

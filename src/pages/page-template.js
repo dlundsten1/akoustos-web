@@ -25,6 +25,10 @@ const template = ({ pageContext }) => {
     },
   };
   return (
+    <>
+      <head>
+       <title>{pageContext.title}</title>
+      </head>
     <Layout onRoot={false}>
       <h1 style={{textTransform:'uppercase'}}>{pageContext.title}</h1>
       {pageContext.content?.raw &&
@@ -33,6 +37,7 @@ const template = ({ pageContext }) => {
           options
         )}
     </Layout>
+    </>
   );
 };
 

@@ -5,6 +5,16 @@ import * as styles from "./home.module.css";
 
 const home = () => {
   return (
+    <>
+    <head>
+      <title>Home</title>
+      <meta charset="UTF-8"/>
+      <meta name="description" content="Akoustos, the sound absorbing screw" />
+      <meta name="keywords" content="Screw, Sound, Absorbing, Akoustos"/>
+      <meta name="author" content="David Lundsten"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    
     <Layout onRoot={true}>
       <div className={styles.wrapper}>
         <div style={{ margin: "auto" }}>
@@ -20,6 +30,7 @@ const home = () => {
         />
       </div>
     </Layout>
+    </>
   );
 };
 
