@@ -22,12 +22,12 @@ const home = () => {
             The revolutionary sound absorbing screw
           </h1>
         </div>
-        <img
+        {/* <img
           className={styles.image}
           height="500"
           alt="image of the Akoustos screw"
           src={`screws.png`}
-        />
+        /> */}
       </div>
     </Layout>
     </>
